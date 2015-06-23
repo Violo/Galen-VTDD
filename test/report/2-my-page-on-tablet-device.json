@@ -1,0 +1,97 @@
+{
+  "testId" : "2-my-page-on-tablet-device",
+  "name" : "My page on Tablet device",
+  "report" : {
+    "nodes" : [ {
+      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html 640x800",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "        wait 2s",
+        "status" : "info",
+        "time" : 1435068393410,
+        "type" : "node"
+      }, {
+        "name" : "        check myspec.spec --include \"Tablet\"",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: myspec.spec included tags: Tablet",
+          "status" : "error",
+          "time" : 1435068395808,
+          "includedTags" : [ "Tablet" ],
+          "sections" : [ {
+            "name" : "*",
+            "objects" : [ {
+              "name" : "Header",
+              "specs" : [ {
+                "status" : "error",
+                "place" : {
+                  "filePath" : "myspec.spec",
+                  "lineNumber" : 12
+                },
+                "name" : "absent",
+                "errors" : [ "\"Header\" is not absent on page" ],
+                "highlight" : [ "Header" ]
+              } ]
+            }, {
+              "name" : "Footer",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.spec",
+                  "lineNumber" : 15
+                },
+                "name" : "visible",
+                "highlight" : [ "Footer" ]
+              } ]
+            } ]
+          }, {
+            "name" : "Desktop, Tablet",
+            "objects" : [ {
+              "name" : "Aside",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.spec",
+                  "lineNumber" : 21
+                },
+                "name" : "width: ~ 20 % of viewport/width",
+                "highlight" : [ "Aside" ]
+              } ]
+            }, {
+              "name" : "Content",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.spec",
+                  "lineNumber" : 24
+                },
+                "name" : "width: ~ 80 % of viewport/width",
+                "highlight" : [ "Content" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "Aside" : {
+              "area" : [ 0, 116, 128, 134 ]
+            },
+            "Header" : {
+              "area" : [ 0, 16, 640, 100 ]
+            },
+            "Content" : {
+              "area" : [ 128, 116, 512, 134 ]
+            },
+            "Footer" : {
+              "area" : [ 0, 250, 640, 19 ]
+            }
+          },
+          "screenshot" : "layout-2-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1435068395410,
+        "type" : "node"
+      } ],
+      "time" : 1435068391641,
+      "type" : "node"
+    } ]
+  }
+}
