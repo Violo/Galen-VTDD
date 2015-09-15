@@ -1,0 +1,66 @@
+{
+  "testId" : "3-home-page-on-mobile-device",
+  "name" : "Home page on Mobile device",
+  "report" : {
+    "nodes" : [ {
+      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html     320x480",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check   myspec.gspec --include \"mobile,all\" --exclude \"nomobile\"",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "Check layout: myspec.gspec included tags: mobile,all",
+          "status" : "info",
+          "time" : 1442310173032,
+          "includedTags" : [ "mobile", "all" ],
+          "excludedTags" : [ "nomobile" ],
+          "sections" : [ {
+            "name" : "Main section",
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "height 100px",
+                "highlight" : [ "header" ]
+              } ]
+            }, {
+              "name" : "footer",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "height 50px",
+                "highlight" : [ "footer" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "footer" : {
+              "area" : [ 0, 388, 335, 50 ]
+            },
+            "header" : {
+              "area" : [ 0, 0, 335, 100 ]
+            }
+          },
+          "screenshot" : "layout-3-screenshot.png",
+          "type" : "layout"
+        } ],
+        "time" : 1442310172760,
+        "type" : "node"
+      }, {
+        "name" : "wait 2s",
+        "status" : "info",
+        "time" : 1442310173032,
+        "type" : "node"
+      } ],
+      "time" : 1442310166110,
+      "type" : "node"
+    } ]
+  }
+}

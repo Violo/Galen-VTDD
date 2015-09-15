@@ -4,6 +4,13 @@ body{
     margin:0;
     padding:0;
 }
+p{
+    margin:0;
+    padding:0;
+}
+pre{
+    font-size:12px;
+}
 #header{
     height:100px;
     background-color:yellow;
@@ -21,6 +28,7 @@ body{
 #footer{
     clear:both;
     background-color:green;
+    height:50px;
 }
 
 /* Mediaquery */

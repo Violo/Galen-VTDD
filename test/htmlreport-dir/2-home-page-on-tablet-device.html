@@ -7,123 +7,67 @@
         <script src="galen-report.js"></script>
         <script>
 var reportData = {
-  "testId" : "1-my-page-on-device",
-  "name" : "My page on  device",
+  "testId" : "2-home-page-on-tablet-device",
+  "name" : "Home page on Tablet device",
   "report" : {
     "nodes" : [ {
-      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html",
+      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html     640x480",
       "status" : "info",
       "nodes" : [ {
-        "name" : "        wait 2s",
-        "status" : "info",
-        "time" : 1435068015332,
-        "type" : "node"
-      }, {
-        "name" : "        check myspec.spec",
+        "name" : "check   myspec.gspec --include \"mobile,all\" --exclude \"nomobile\"",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: myspec.spec included tags: ",
-          "status" : "error",
-          "time" : 1435068018159,
+          "name" : "Check layout: myspec.gspec included tags: mobile,all",
+          "status" : "info",
+          "time" : 1442310171633,
+          "includedTags" : [ "mobile", "all" ],
+          "excludedTags" : [ "nomobile" ],
           "sections" : [ {
-            "name" : "*",
+            "name" : "Main section",
             "objects" : [ {
-              "name" : "Header",
+              "name" : "header",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 12
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 13
                 },
-                "name" : "visible",
-                "highlight" : [ "Header" ]
+                "name" : "height 100px",
+                "highlight" : [ "header" ]
               } ]
             }, {
-              "name" : "Footer",
+              "name" : "footer",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 15
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 16
                 },
-                "name" : "visible",
-                "highlight" : [ "Footer" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Desktop, Tablet",
-            "objects" : [ {
-              "name" : "Aside",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 21
-                },
-                "name" : "width: ~ 20 % of viewport/width",
-                "highlight" : [ "Aside" ]
-              } ]
-            }, {
-              "name" : "Content",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 24
-                },
-                "name" : "width: ~ 80 % of viewport/width",
-                "highlight" : [ "Content" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Smartphone",
-            "objects" : [ {
-              "name" : "Aside",
-              "specs" : [ {
-                "status" : "error",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 30
-                },
-                "name" : "width: ~ 100 % of Section/width",
-                "errors" : [ "\"Aside\" width is 288px which is not in range of 1396,8 to 1483,2px" ],
-                "highlight" : [ "Aside" ]
-              } ]
-            }, {
-              "name" : "Content",
-              "specs" : [ {
-                "status" : "error",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 33
-                },
-                "name" : "width: ~ 100 % of viewport/width",
-                "errors" : [ "\"Content\" width is 1152px which is not in range of 1396,8 to 1483,2px" ],
-                "highlight" : [ "Content" ]
+                "name" : "height 50px",
+                "highlight" : [ "footer" ]
               } ]
             } ]
           } ],
           "objects" : {
-            "Aside" : {
-              "area" : [ 0, 116, 288, 134 ]
+            "footer" : {
+              "area" : [ 0, 369, 640, 50 ]
             },
-            "Header" : {
-              "area" : [ 0, 16, 1440, 100 ]
-            },
-            "Content" : {
-              "area" : [ 288, 116, 1152, 134 ]
-            },
-            "Footer" : {
-              "area" : [ 0, 250, 1440, 19 ]
+            "header" : {
+              "area" : [ 0, 0, 640, 100 ]
             }
           },
-          "screenshot" : "layout-1-screenshot.png",
+          "screenshot" : "layout-2-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1435068017336,
+        "time" : 1442310171263,
+        "type" : "node"
+      }, {
+        "name" : "wait 2s",
+        "status" : "info",
+        "time" : 1442310171633,
         "type" : "node"
       } ],
-      "time" : 1435068012865,
+      "time" : 1442310166113,
       "type" : "node"
     } ]
   }
@@ -183,7 +127,7 @@ var reportData = {
         <script id="report-layout-tpl" type="text/x-handlebars-template">
             <li>
                 <span class="report-time">{{formatReportTime time}}</span>
-                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">INFO</a>
+                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">LAYOUT</a>
                 <div class="node-name">{{name}}</div>
                 <div class="node-details expand-container">
                     {{renderSublayout this}}
@@ -305,7 +249,7 @@ var reportData = {
                 <li><a class="menu-op-expand-errors" href="#">Expand Errors</a></li>
             </ul>
         </div>
-        <h2>My page on  device</h2>
+        <h2>Home page on Tablet device</h2>
         <div id="main"></div>
         <div id="screen-shadow"></div>
         <div id="popup" class="popup">

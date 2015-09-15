@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results>
+    <suite name="Galen Suite">
+                <test name="Home page on Desktop device">
+            <class name="Home page on Desktop device">
+                <test-method status="PASS" signature="Home page on Desktop device" name="Home page on Desktop device" duration-ms="6126" started-at="2015-09-15T11:42:46Z" finished-at="2015-09-15T11:42:52Z" description="">
+                </test-method>
+            </class>
+        </test>
+        <test name="Home page on Tablet device">
+            <class name="Home page on Tablet device">
+                <test-method status="PASS" signature="Home page on Tablet device" name="Home page on Tablet device" duration-ms="7600" started-at="2015-09-15T11:42:46Z" finished-at="2015-09-15T11:42:53Z" description="">
+                </test-method>
+            </class>
+        </test>
+        <test name="Home page on Mobile device">
+            <class name="Home page on Mobile device">
+                <test-method status="PASS" signature="Home page on Mobile device" name="Home page on Mobile device" duration-ms="9004" started-at="2015-09-15T11:42:46Z" finished-at="2015-09-15T11:42:55Z" description="">
+                </test-method>
+            </class>
+        </test>
+    </suite>
+</testng-results>

@@ -113,6 +113,9 @@ function onLayoutCheckClick() {
                 screenshot = _GalenReport.layouts[0].screenshot;
             }
 
+            showShadow();
+            showPopup("Loading ...");
+
             loadImage(screenshot, function () {
                 _GalenReport.showNotification(checkText, errorText);
                 _GalenReport.showScreenshotWithObjects(screenshot, this.width, this.height, objects);
@@ -145,6 +148,9 @@ function onImageComparisonClick() {
     var expectedImagePath = $this.attr("data-expected-image");
     var mapImagePath = $this.attr("data-map-image");
 
+    showShadow();
+    showPopup("Loading ...");
+
     loadImage(actualImagePath, function (actualImage, actualImageWidth, actualImageHeight) {
         loadImage(expectedImagePath, function (expectedImage, expectedImageWidth, expectedImageHeight) {
             loadImage(mapImagePath, function (mapImage, mapImageWidth, mapImageHeight) {
@@ -156,6 +162,7 @@ function onImageComparisonClick() {
             });
         });
     });
+
     return false;
 }
 
@@ -474,11 +481,14 @@ function createGalenTestOverview() {
 
 
         handleHash: function (hash) {
+            var hashParameters = hash.split("|");
+            var view = hashParameters[0];
+
             $(".tabs .tab-selected").each(function () {
                 $(this).removeClass("tab-selected");
             });
 
-            if (hash.indexOf("groups") === 0) {
+            if (view === "groups") {
                 $("#" + this.testsTableId).hide();
                 $("#" + this.groupsTableId).show();
                 $(".tabs .tab-groups").addClass("tab-selected");
@@ -568,6 +578,14 @@ function createGalenTestOverview() {
             this.createTableSorter('#' + id + " table");
         },
 
+        initialSorting: function () {
+            return [
+                [2, 1],
+                [0, 0],
+                [1, 0]
+            ];
+        },
+
         createTableSorter: function (selector) {
             $(selector).tablesorter({
                 theme: 'default',
@@ -585,27 +603,9 @@ function createGalenTestOverview() {
                 usNumberFormat: true,
                 delayInit: false,
                 serverSideSorting: false,
-                headers: {
-                    0: {
-                        sorter: "text"
-                    },
-                    1: {
-                        sorter: "digit"
-                    },
-                    2: {
-                        sorter: "text"
-                    },
-                    3: {
-                        sorter: "url"
-                    }
-                },
                 ignoreCase: true,
                 sortForce: null,
-                sortList: [
-                    [0, 0],
-                    [1, 0],
-                    [2, 0]
-                ],
+                sortList: this.initialSorting(),
                 sortAppend: null,
                 sortInitialOrder: "asc",
                 sortLocaleCompare: false,

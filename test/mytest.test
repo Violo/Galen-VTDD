@@ -1,13 +1,12 @@
 @@ set domain file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html
 
-@@ table devices
-    | deviceName     | size     |
-    | Smartphone     | 320x480  |
-    | Tablet         | 640x800  |
-    | Desktop        | 1024x768 |
+@@ parameterized
+    | deviceName | tags      | size     |
+    | Mobile     | mobile    | 320x480  |
+    | Tablet     | tablet    | 640x480  |
+    | Desktop    | desktop   | 1024x800 |
 
-@@ parameterized using devices
-My page on ${deviceName} device
-    ${domain} ${size}
+Home page on ${deviceName} device
+    ${domain}     ${size}
+        check   myspec.gspec --include "mobile,all" --exclude "nomobile"
         wait 2s
-        check myspec.spec --include "${deviceName}"

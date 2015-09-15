@@ -1,0 +1,16 @@
+# Spec file for example
+# Here spec language v 2: http://galenframework.com/docs/reference-galen-spec-language-guide/#Comments
+
+@objects
+    header          id      header
+    content         id      content
+    aside           id      aside
+    article         id      article
+    footer          id      footer
+
+= Main section =
+    header:
+        height 100px
+    
+    footer:
+        height 50px

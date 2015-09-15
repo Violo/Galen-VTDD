@@ -7,98 +7,67 @@
         <script src="galen-report.js"></script>
         <script>
 var reportData = {
-  "testId" : "3-my-page-on-desktop-device",
-  "name" : "My page on Desktop device",
+  "testId" : "1-home-page-on-desktop-device",
+  "name" : "Home page on Desktop device",
   "report" : {
     "nodes" : [ {
-      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html 1024x768",
+      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html     1024x800",
       "status" : "info",
       "nodes" : [ {
-        "name" : "        wait 2s",
-        "status" : "info",
-        "time" : 1435068397596,
-        "type" : "node"
-      }, {
-        "name" : "        check myspec.spec --include \"Desktop\"",
+        "name" : "check   myspec.gspec --include \"mobile,all\" --exclude \"nomobile\"",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: myspec.spec included tags: Desktop",
-          "status" : "error",
-          "time" : 1435068399980,
-          "includedTags" : [ "Desktop" ],
+          "name" : "Check layout: myspec.gspec included tags: mobile,all",
+          "status" : "info",
+          "time" : 1442310170156,
+          "includedTags" : [ "mobile", "all" ],
+          "excludedTags" : [ "nomobile" ],
           "sections" : [ {
-            "name" : "*",
+            "name" : "Main section",
             "objects" : [ {
-              "name" : "Header",
+              "name" : "header",
               "specs" : [ {
-                "status" : "error",
+                "status" : "info",
                 "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 12
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 13
                 },
-                "name" : "absent",
-                "errors" : [ "\"Header\" is not absent on page" ],
-                "highlight" : [ "Header" ]
+                "name" : "height 100px",
+                "highlight" : [ "header" ]
               } ]
             }, {
-              "name" : "Footer",
+              "name" : "footer",
               "specs" : [ {
                 "status" : "info",
                 "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 15
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 16
                 },
-                "name" : "visible",
-                "highlight" : [ "Footer" ]
-              } ]
-            } ]
-          }, {
-            "name" : "Desktop, Tablet",
-            "objects" : [ {
-              "name" : "Aside",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 21
-                },
-                "name" : "width: ~ 20 % of viewport/width",
-                "highlight" : [ "Aside" ]
-              } ]
-            }, {
-              "name" : "Content",
-              "specs" : [ {
-                "status" : "info",
-                "place" : {
-                  "filePath" : "myspec.spec",
-                  "lineNumber" : 24
-                },
-                "name" : "width: ~ 80 % of viewport/width",
-                "highlight" : [ "Content" ]
+                "name" : "height 50px",
+                "highlight" : [ "footer" ]
               } ]
             } ]
           } ],
           "objects" : {
-            "Aside" : {
-              "area" : [ 0, 116, 205, 134 ]
+            "footer" : {
+              "area" : [ 0, 369, 1024, 50 ]
             },
-            "Header" : {
-              "area" : [ 0, 16, 1024, 100 ]
-            },
-            "Content" : {
-              "area" : [ 205, 116, 819, 134 ]
-            },
-            "Footer" : {
-              "area" : [ 0, 250, 1024, 19 ]
+            "header" : {
+              "area" : [ 0, 0, 1024, 100 ]
             }
           },
-          "screenshot" : "layout-3-screenshot.png",
+          "screenshot" : "layout-1-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1435068399597,
+        "time" : 1442310169127,
+        "type" : "node"
+      }, {
+        "name" : "wait 2s",
+        "status" : "info",
+        "time" : 1442310170156,
         "type" : "node"
       } ],
-      "time" : 1435068395877,
+      "time" : 1442310166112,
       "type" : "node"
     } ]
   }
@@ -158,7 +127,7 @@ var reportData = {
         <script id="report-layout-tpl" type="text/x-handlebars-template">
             <li>
                 <span class="report-time">{{formatReportTime time}}</span>
-                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">INFO</a>
+                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">LAYOUT</a>
                 <div class="node-name">{{name}}</div>
                 <div class="node-details expand-container">
                     {{renderSublayout this}}
@@ -280,7 +249,7 @@ var reportData = {
                 <li><a class="menu-op-expand-errors" href="#">Expand Errors</a></li>
             </ul>
         </div>
-        <h2>My page on Desktop device</h2>
+        <h2>Home page on Desktop device</h2>
         <div id="main"></div>
         <div id="screen-shadow"></div>
         <div id="popup" class="popup">

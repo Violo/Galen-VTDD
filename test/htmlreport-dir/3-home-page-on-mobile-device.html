@@ -7,29 +7,67 @@
         <script src="galen-report.js"></script>
         <script>
 var reportData = {
-  "testId" : "1-my-page-on-mobile-device",
-  "name" : "My page on Mobile device",
+  "testId" : "3-home-page-on-mobile-device",
+  "name" : "Home page on Mobile device",
   "report" : {
     "nodes" : [ {
-      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html 320x600",
+      "name" : "file:///Volumes/Backup%20di%20Time%20Machine/Sites/Violo-GitHub/Galen-VTDD/site/index.html     320x480",
       "status" : "info",
       "nodes" : [ {
-        "name" : "        check myspec.spec --include mobile",
+        "name" : "check   myspec.gspec --include \"mobile,all\" --exclude \"nomobile\"",
         "status" : "info",
         "nodes" : [ {
-          "name" : "Check layout: myspec.spec included tags: mobile",
+          "name" : "Check layout: myspec.gspec included tags: mobile,all",
           "status" : "info",
-          "time" : 1435066878459,
-          "includedTags" : [ "mobile" ],
-          "sections" : [ ],
-          "objects" : { },
-          "screenshot" : "layout-1-screenshot.png",
+          "time" : 1442310173032,
+          "includedTags" : [ "mobile", "all" ],
+          "excludedTags" : [ "nomobile" ],
+          "sections" : [ {
+            "name" : "Main section",
+            "objects" : [ {
+              "name" : "header",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 13
+                },
+                "name" : "height 100px",
+                "highlight" : [ "header" ]
+              } ]
+            }, {
+              "name" : "footer",
+              "specs" : [ {
+                "status" : "info",
+                "place" : {
+                  "filePath" : "myspec.gspec",
+                  "lineNumber" : 16
+                },
+                "name" : "height 50px",
+                "highlight" : [ "footer" ]
+              } ]
+            } ]
+          } ],
+          "objects" : {
+            "footer" : {
+              "area" : [ 0, 388, 335, 50 ]
+            },
+            "header" : {
+              "area" : [ 0, 0, 335, 100 ]
+            }
+          },
+          "screenshot" : "layout-3-screenshot.png",
           "type" : "layout"
         } ],
-        "time" : 1435066878193,
+        "time" : 1442310172760,
+        "type" : "node"
+      }, {
+        "name" : "wait 2s",
+        "status" : "info",
+        "time" : 1442310173032,
         "type" : "node"
       } ],
-      "time" : 1435066875713,
+      "time" : 1442310166110,
       "type" : "node"
     } ]
   }
@@ -89,7 +127,7 @@ var reportData = {
         <script id="report-layout-tpl" type="text/x-handlebars-template">
             <li>
                 <span class="report-time">{{formatReportTime time}}</span>
-                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">INFO</a>
+                <a class="expand-link node-expand-button node-status-label node-status-info contains-children-true collapsed" href="#">LAYOUT</a>
                 <div class="node-name">{{name}}</div>
                 <div class="node-details expand-container">
                     {{renderSublayout this}}
@@ -211,7 +249,7 @@ var reportData = {
                 <li><a class="menu-op-expand-errors" href="#">Expand Errors</a></li>
             </ul>
         </div>
-        <h2>My page on Mobile device</h2>
+        <h2>Home page on Mobile device</h2>
         <div id="main"></div>
         <div id="screen-shadow"></div>
         <div id="popup" class="popup">
