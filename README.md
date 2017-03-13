@@ -1,4 +1,4 @@
-## What inside
+## Galen Framework
 
 > VTTD enviroment running with Galen Framework
 
