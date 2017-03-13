@@ -9,4 +9,4 @@
 Home page on ${deviceName} device
     ${domain}     ${size}
         check   myspec.gspec --include "mobile,all" --exclude "nomobile"
-        wait 2s
+        wait 1s
